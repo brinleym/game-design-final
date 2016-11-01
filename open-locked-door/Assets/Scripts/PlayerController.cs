@@ -5,21 +5,32 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed;
 	public string axisName;
+
 	private Rigidbody2D rb;
 	private bool hasKey = false;
+	private float move_horiz = 0.0f;
+	private float move_vert = 0.0f;
 
 	// Use this for initialization
 	void Start () {
 
-		//rb = GetComponent<Rigidbody2D> ();
+		rb = GetComponent<Rigidbody2D> ();
 	
 	}
 
 	void Update () {
 
-		// player movement code
-		transform.position += transform.right *Input.GetAxis(axisName)* speed;
-	
+		// player movement code (working)
+		//transform.position += transform.right *Input.GetAxis(axisName)* speed;
+
+		move_horiz = Input.GetAxis ("Horizontal");
+		rb.velocity = new Vector2 (move_horiz * speed, rb.velocity.x);
+
+		move_vert = Input.GetAxis("Vertical");
+		rb.velocity = new Vector2 (move_vert * speed, rb.velocity.y);
+
+
+
 	}
 
 	// pick up code
