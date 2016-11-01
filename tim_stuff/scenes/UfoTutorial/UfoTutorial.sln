@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{543B0254-2E95-89DC-EFE8-81565452CE6D}") = "UfoTutorial", "Assembly-CSharp.csproj", "{8E882A9C-7A7D-B3F2-EEA1-D47454759499}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E882A9C-7A7D-B3F2-EEA1-D47454759499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E882A9C-7A7D-B3F2-EEA1-D47454759499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E882A9C-7A7D-B3F2-EEA1-D47454759499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E882A9C-7A7D-B3F2-EEA1-D47454759499}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
