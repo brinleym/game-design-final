@@ -22,12 +22,30 @@ public class PlayerController : MonoBehaviour {
 
 		// player movement code (working)
 		//transform.position += transform.right *Input.GetAxis(axisName)* speed;
-
-		move_horiz = Input.GetAxis ("Horizontal");
-		rb.velocity = new Vector2 (move_horiz * speed, rb.velocity.x);
-
-		move_vert = Input.GetAxis("Vertical");
-		rb.velocity = new Vector2 (move_vert * speed, rb.velocity.y);
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			Vector3 position = this.transform.position;
+			position.x--;
+			this.transform.position = position;
+		}
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			Vector3 position = this.transform.position;
+			position.x++;
+			this.transform.position = position;
+		}
+		if (Input.GetKeyDown(KeyCode.UpArrow))
+		{
+			Vector3 position = this.transform.position;
+			position.y++;
+			this.transform.position = position;
+		}
+		if (Input.GetKeyDown(KeyCode.DownArrow))
+		{
+			Vector3 position = this.transform.position;
+			position.y--;
+			this.transform.position = position;
+		}
 
 
 
