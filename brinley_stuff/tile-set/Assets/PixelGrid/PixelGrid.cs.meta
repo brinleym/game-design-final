@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e532718d63c539643a9f4af007cb1725
+labels:
+- PixelGrid
+- Sprite
+- Grid
+- Pixel
+- 2d
+- Editor
+- Level
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
