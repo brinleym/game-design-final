@@ -18,40 +18,50 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.A))
 		{
 			Vector2 position = this.transform.position;
-			position.x = position.x - 10;
+			position.x = position.x - 1;
 			this.transform.position = position;
 		}
 		if (Input.GetKeyDown(KeyCode.D))
 		{
 			Vector2 position = this.transform.position;
-			position.x = position.x + 10;
+			position.x = position.x + 1;
 			this.transform.position = position;
 		}
 		if (Input.GetKeyDown(KeyCode.W))
 		{
 			Vector2 position = this.transform.position;
-			position.y = position.y + 10;
+			position.y = position.y + 1;
 			this.transform.position = position;
 		}
 		if (Input.GetKeyDown(KeyCode.S))
 		{
 			Vector2 position = this.transform.position;
-			position.y = position.y - 10;
+			position.y = position.y - 1;
 			this.transform.position = position;
 		}
 
 	}
-
-	// push code
-	void OnTriggerEnter2D(Collider2D other) 
-	{
-		if (other.gameObject.CompareTag ("Block"))
-		{
-			Vector2 position = gameObject.transform.position;
-			position.y = position.y + 20;
-			gameObject.transform.position = position;
-		}
-			
-	}
-
+		
+//	void OnCollisionEnter2D (Collision2D col) {
+//
+//		Debug.Log("collision occurred!");
+//
+//		Collider2D collider = col.collider;
+//		if(col.gameObject.CompareTag("Block"))
+//		{
+//			//Destroy(col.gameObject);
+//			ContactPoint2D contact = col.contacts[0];
+//			Vector3 contactPos = contact.point;
+//			Vector3 center = collider.bounds.center;
+//
+//			bool right = contactPos.x > center.x;
+//
+//			if(right) {
+//
+//				Debug.Log("collided from right!");
+//
+//			}
+//			bool top = contactPos.y > center.y;
+//		}
+//	}
 }
