@@ -25,6 +25,8 @@ public class Loader : MonoBehaviour {
 
 		Instantiate(player, new Vector3(1, 1, 0f), Quaternion.identity);
 		Instantiate(boxList[0], new Vector3(4, 4, 0f), Quaternion.identity);
+		Instantiate(boxList[1], new Vector3(5, 5, 0f), Quaternion.identity);
+		Instantiate(boxList[2], new Vector3(6, 4, 0f), Quaternion.identity);
 	}
 
 }
