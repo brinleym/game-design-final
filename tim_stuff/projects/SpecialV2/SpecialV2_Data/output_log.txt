@@ -1,0 +1,82 @@
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 410M (ID=0x1055)
+    Vendor:   NVIDIA
+    VRAM:     1870 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.219 seconds
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.044156 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.092328 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 404.
+Total: 0.460499 ms (FindLiveObjects: 0.046853 ms CreateObjectMapping: 0.116017 ms MarkObjects: 0.284242 ms  DeleteObjects: 0.012047 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.720646 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 404.
+Total: 0.241851 ms (FindLiveObjects: 0.036590 ms CreateObjectMapping: 0.051315 ms MarkObjects: 0.146360 ms  DeleteObjects: 0.005800 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.377056 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 404.
+Total: 0.220879 ms (FindLiveObjects: 0.027665 ms CreateObjectMapping: 0.032574 ms MarkObjects: 0.153499 ms  DeleteObjects: 0.006247 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.185588 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 404.
+Total: 0.411861 ms (FindLiveObjects: 0.043729 ms CreateObjectMapping: 0.067825 ms MarkObjects: 0.286919 ms  DeleteObjects: 0.012047 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.804089 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 404.
+Total: 0.386427 ms (FindLiveObjects: 0.035697 ms CreateObjectMapping: 0.067379 ms MarkObjects: 0.270409 ms  DeleteObjects: 0.011155 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.726893 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 404.
+Total: 0.374825 ms (FindLiveObjects: 0.035697 ms CreateObjectMapping: 0.067379 ms MarkObjects: 0.260146 ms  DeleteObjects: 0.011155 ms)
+
+Scene '' (-1) couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded.
+To add a scene to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 532)
+
+Scene '' (-1) couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded.
+To add a scene to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 532)
+
+Scene '' (-1) couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded.
+To add a scene to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 532)
+
+Scene '' (-1) couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded.
+To add a scene to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 532)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 7ec -> priority: 1 

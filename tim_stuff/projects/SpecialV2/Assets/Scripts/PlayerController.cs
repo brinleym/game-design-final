@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-	public LayerMask BlockingLayer;
+	public LayerMask BlockingLayer, KeyLayer;
 	public float moveTime = 0.1f;
-	public KeyCode left;
-	public KeyCode right;
-	public KeyCode up;
-	public KeyCode down;
-	public KeyCode action;
+	public KeyCode left, right, up, down, action, restart;
+	public string colorPower;
 
 	private Rigidbody2D playerRB2D;
 	private BoxCollider2D playerCollider;
 	private float inverseMoveTime;
 	private Animator animator;
+	private float lastTime;
+	private bool haveKey;
 
 	// Use this for initialization
 	void Start () 
@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour {
 		playerCollider = GetComponent<BoxCollider2D>();
 		inverseMoveTime = 1f / moveTime;
 		animator = GetComponent<Animator>();
+		lastTime = Time.time;
+		haveKey = false;
 	}
 
 	// Update checks for key strokes from the player
@@ -31,27 +33,35 @@ public class PlayerController : MonoBehaviour {
 		Vector3 newPosition = playerRB2D.position;
 
 		// for each direction, get new position, adjust animator and check if blocked
-		if (Input.GetKeyDown (left)) {
+		if (Input.GetKeyDown (left) && (Time.time - lastTime > 0.15f)) {
 			newPosition.x = newPosition.x - 1;
 			animator.SetInteger ("direction", 3);
 			AttemptMove (newPosition);
-		} else if (Input.GetKeyDown (right)) {
+		} else if (Input.GetKeyDown (right) && (Time.time - lastTime > 0.15f)) {
 			newPosition.x = newPosition.x + 1;
 			animator.SetInteger ("direction", 2);
 			AttemptMove (newPosition);
-		} else if (Input.GetKeyDown (up)) {
+		} else if (Input.GetKeyDown (up) && (Time.time - lastTime > 0.15f)) {
 			newPosition.y = newPosition.y + 1;
 			animator.SetInteger ("direction", 1);
 			AttemptMove (newPosition);
-		} else if (Input.GetKeyDown (down)) {
+		} else if (Input.GetKeyDown (down) && (Time.time - lastTime > 0.15f)) {
 			newPosition.y = newPosition.y - 1;
 			animator.SetInteger ("direction", 0);
 			AttemptMove (newPosition);
 		} else if (Input.GetKeyDown (action)) {
-			animator.SetTrigger ("fire");
+			animator.SetTrigger ("ability");
 		}
+
+		// restart room
+		else if (Input.GetKeyDown(restart)) {
+			int scene = SceneManager.GetActiveScene().buildIndex;
+			SceneManager.LoadScene (scene, LoadSceneMode.Single);
+		}
+
 	}
 
+	// function for a player trying to move to position 'end'
 	private void AttemptMove(Vector3 end)
 	{
 		// disable own collider before casting ray
@@ -61,18 +71,34 @@ public class PlayerController : MonoBehaviour {
 
 		// move only if no collision
 		if (hit.collider == null) {
-			StartCoroutine (SmoothMovement (playerRB2D, end));
-		} else { 
-			// otherwise, check for collision with box
-			if (hit.collider.gameObject.tag == "Box") {
 
-				// get the box collided with and send to movement
-				Rigidbody2D box = hit.collider.gameObject.GetComponent<Rigidbody2D>();
-				AttemptPush (box, end);
+			// check for key and move
+			playerCollider.enabled = false;
+			hit = Physics2D.Linecast(playerRB2D.position, end, KeyLayer);
+			playerCollider.enabled = true;
+			StartCoroutine(SmoothMovement (playerRB2D, end));
+
+			// pick up key if collided and is of correct color
+			if (hit.collider != null && hit.collider.name.Contains(colorPower)) {
+				hit.collider.gameObject.SetActive (false);
+				haveKey = true;
 			}
+		} 
+		// otherwise, check for collision with boxes and doors
+		else { 
+			if (hit.collider.gameObject.tag == "Box") {
+				// get the box collided with and send to movement
+				Rigidbody2D box = hit.collider.gameObject.GetComponent<Rigidbody2D> ();
+				if (box.name.Contains (colorPower))
+					AttemptPush (box, end);
+			} 
 		}
+
+		// update the time variable
+		lastTime = Time.time;
 	}
 
+	// function that takes a box and attempts to push it to position 'end'
 	private void AttemptPush(Rigidbody2D box, Vector3 end)
 	{
 		Vector3 newBoxPosition = box.position;
@@ -100,6 +126,13 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	// function to see if a player has picked up their key
+	public bool checkKey()
+	{
+		return haveKey;
+	}
+
+	// function from RogueLike2D to create smooth movement of characters
 	private IEnumerator SmoothMovement(Rigidbody2D rb, Vector3 end)
 	{
 		float sqrRemainingDistance = (rb.transform.position - end).sqrMagnitude;
