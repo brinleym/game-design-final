@@ -4,14 +4,18 @@ using System.Collections;
 public class LockScript : MonoBehaviour {
 
 	public string color;
-	private bool unlock;
+
+	private bool unlock, sound;
 	private GameObject door;
+	private AudioSource keyUnlock;
 
 	// initialize unlock to false, get door object
 	void Start () 
 	{
 		unlock = false;
+		sound = true;
 		door = GameObject.FindGameObjectWithTag("Door");
+		keyUnlock = GetComponent<AudioSource>();
 	}
 
 	// function to check a lock status
@@ -29,10 +33,16 @@ public class LockScript : MonoBehaviour {
 
 		// set unlock to true if player has keys and matches color
 		if (p.checkKey () && p.colorPower.Contains(color)) {
+
+			// play sound effect once so it doesn't play on exit
+			if (sound) {
+				keyUnlock.Play();
+				sound = false;
+			}
+
+			// set variable and check door
 			unlock = true;
 			d.CheckDoor();
-            //play unlock sound
-            GetComponent<AudioSource>().Play();
 		}
 	}
 
@@ -40,5 +50,6 @@ public class LockScript : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D collider)
 	{
 		unlock = false;
+		sound = true;  // reset sound effect var
 	}
 }

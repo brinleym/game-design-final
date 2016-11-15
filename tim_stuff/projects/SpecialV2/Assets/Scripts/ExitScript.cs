@@ -8,13 +8,13 @@ public class ExitScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		level = 0;
+		level = SceneManager.GetActiveScene().buildIndex;
 	}
 
 	// load next level on exiting (this is still buggy!)
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		level += 1;
-		SceneManager.LoadScene(level);
+		SceneManager.LoadScene(level, LoadSceneMode.Single);
 	}
 }

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float moveTime = 0.1f;
 	public KeyCode left, right, up, down, action, restart;
 	public string colorPower;
+	public AudioSource[] sounds;
 
 	private Rigidbody2D playerRB2D;
 	private BoxCollider2D playerCollider;
@@ -15,7 +16,6 @@ public class PlayerController : MonoBehaviour {
 	private Animator animator;
 	private float lastTime;
 	private bool haveKey;
-    private AudioSource[] sounds;
 
 	// Use this for initialization
 	void Start () 
@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		lastTime = Time.time;
 		haveKey = false;
-        sounds = GetComponents<AudioSource>();
 	}
 
 	// Update checks for key strokes from the player
@@ -74,36 +73,31 @@ public class PlayerController : MonoBehaviour {
 		// move only if no collision
 		if (hit.collider == null) {
 
-            //play step sound effect
-            sounds[0].Play();
-
-            // check for key and move
-            playerCollider.enabled = false;
+			// check for key and move
+			playerCollider.enabled = false;
 			hit = Physics2D.Linecast(playerRB2D.position, end, KeyLayer);
 			playerCollider.enabled = true;
 			StartCoroutine(SmoothMovement (playerRB2D, end));
 
 			// pick up key if collided and is of correct color
 			if (hit.collider != null && hit.collider.name.Contains(colorPower)) {
-                hit.collider.gameObject.SetActive (false);
+
+				// play sound effect, remove key, set player's haveKey variable
+				AudioSource source = hit.collider.GetComponent<AudioSource>();
+				AudioClip clip = source.clip;
+				source.Play();
+				Destroy (hit.collider.gameObject, clip.length);
 				haveKey = true;
-                //play key sound effect
-                sounds[1].Play();
 			}
 		} 
 		// otherwise, check for collision with boxes and doors
-		else {
-            
+		else { 
 			if (hit.collider.gameObject.tag == "Box") {
 				// get the box collided with and send to movement
 				Rigidbody2D box = hit.collider.gameObject.GetComponent<Rigidbody2D> ();
 				if (box.name.Contains (colorPower))
 					AttemptPush (box, end);
 			} 
-            else {
-                //play wall sound effect
-                sounds[2].Play();
-            }
 		}
 
 		// update the time variable
@@ -135,13 +129,8 @@ public class PlayerController : MonoBehaviour {
 		// move the box if nothing is collider
 		if (boxHit.collider == null) {
 			StartCoroutine (SmoothMovement (box, newBoxPosition));
-            //play sound effect
-            box.GetComponent<AudioSource>().Play();
-        }
-        else {
-            //play wall sound effect
-            sounds[2].Play();
-        }
+			box.GetComponent<AudioSource>().Play(); // play sound effect from box
+		}
 	}
 
 	// function to see if a player has picked up their key
@@ -155,8 +144,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		float sqrRemainingDistance = (rb.transform.position - end).sqrMagnitude;
 
-        //While that distance is greater than a very small amount (Epsilon, almost zero):
-        while (sqrRemainingDistance > float.Epsilon)
+		//While that distance is greater than a very small amount (Epsilon, almost zero):
+		while(sqrRemainingDistance > float.Epsilon)
 		{
 			//Find a new position proportionally closer to the end, based on the moveTime
 			Vector3 newPosition = Vector3.MoveTowards(rb.position, end, inverseMoveTime * Time.deltaTime);

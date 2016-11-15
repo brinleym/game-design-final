@@ -6,67 +6,27 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     1870 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.067 seconds
-Platform assembly: C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Tim Ho\Documents\GitHub\game-design-final\tim_stuff\projects\SpecialV2\SpecialV2_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.336 seconds
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Tim Ho\Documents\Tufts\COMP50_GD\SpecialV2\SpecialV2_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.042371 ms
-Can not play a disabled audio source
- 
-(Filename:  Line: 432)
-
+UnloadTime: 50.954376 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.182464 ms
+UnloadTime: 2.108392 ms
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 423.
-Total: 0.489057 ms (FindLiveObjects: 0.064701 ms CreateObjectMapping: 0.090582 ms MarkObjects: 0.298521 ms  DeleteObjects: 0.033466 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.324750 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 423.
-Total: 0.439527 ms (FindLiveObjects: 0.040606 ms CreateObjectMapping: 0.086566 ms MarkObjects: 0.298967 ms  DeleteObjects: 0.012494 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.717076 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 423.
-Total: 0.410076 ms (FindLiveObjects: 0.049530 ms CreateObjectMapping: 0.068717 ms MarkObjects: 0.278441 ms  DeleteObjects: 0.011601 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.658175 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 423.
-Total: 0.387319 ms (FindLiveObjects: 0.039267 ms CreateObjectMapping: 0.067825 ms MarkObjects: 0.266393 ms  DeleteObjects: 0.011601 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.222178 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 423.
-Total: 0.285581 ms (FindLiveObjects: 0.054438 ms CreateObjectMapping: 0.039713 ms MarkObjects: 0.182950 ms  DeleteObjects: 0.007585 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.473886 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 423.
-Total: 0.269071 ms (FindLiveObjects: 0.038374 ms CreateObjectMapping: 0.053100 ms MarkObjects: 0.169117 ms  DeleteObjects: 0.007139 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.435065 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 423.
-Total: 0.273533 ms (FindLiveObjects: 0.039267 ms CreateObjectMapping: 0.052654 ms MarkObjects: 0.173133 ms  DeleteObjects: 0.007139 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 394.
+Total: 0.410969 ms (FindLiveObjects: 0.037928 ms CreateObjectMapping: 0.076749 ms MarkObjects: 0.263270 ms  DeleteObjects: 0.030789 ms)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1d54 -> priority: 1 
+  Thread -> id: 1e48 -> priority: 1 
