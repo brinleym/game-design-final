@@ -28,4 +28,14 @@ public class GameManager : MonoBehaviour {
 
 
 	}
+	void Update() {
+
+		if(Input.GetKeyDown(KeyCode.R)) {
+
+			Application.LoadLevel(Application.loadedLevel); // trigger restart
+
+		}
+
+
+	}
 }
