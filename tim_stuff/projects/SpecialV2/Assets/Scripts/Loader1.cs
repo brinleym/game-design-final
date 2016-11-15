@@ -7,6 +7,7 @@ public class Loader1 : MonoBehaviour {
 	public GameObject floor;
 	public GameObject wall;
 	public GameObject door;
+	public GameObject exit;
 	public GameObject[] players;
 	public GameObject[] boxes;
 	public GameObject[] keys;
@@ -64,6 +65,7 @@ public class Loader1 : MonoBehaviour {
 
 		// door
 		Instantiate (door, new Vector3 (2, 6.5f, 0), Quaternion.identity);
+		Instantiate (exit, new Vector3 (2, 7, 0), Quaternion.identity);
 
 		// init blocks
 		Instantiate(boxes[0], new Vector3(-6, -1, 0f), Quaternion.identity);

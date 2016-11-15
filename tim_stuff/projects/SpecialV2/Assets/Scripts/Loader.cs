@@ -29,7 +29,7 @@ public class Loader : MonoBehaviour {
 						Instantiate (wall [0], new Vector3 (i, j, 0f), Quaternion.identity);
 				}
 				else
-					Instantiate(floor[0], new Vector3(i, j, 0f), Quaternion.identity);
+					Instantiate(floor[1], new Vector3(i, j, 0f), Quaternion.identity);
 			}
 		}
 

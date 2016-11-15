@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\ExitScript.cs" />
      <Compile Include="Assets\Scripts\Loader.cs" />
      <Compile Include="Assets\Scripts\Loader1.cs" />
+     <Compile Include="Assets\Scripts\Loader2.cs" />
      <Compile Include="Assets\Scripts\LockScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
  <Reference Include="UnityEngine.UI">
