@@ -92,13 +92,18 @@ public class PlayerController : MonoBehaviour {
 			}
 		} 
 		// otherwise, check for collision with boxes and doors
-		else { 
+		else {
+            
 			if (hit.collider.gameObject.tag == "Box") {
 				// get the box collided with and send to movement
 				Rigidbody2D box = hit.collider.gameObject.GetComponent<Rigidbody2D> ();
 				if (box.name.Contains (colorPower))
 					AttemptPush (box, end);
 			} 
+            else {
+                //play wall sound effect
+                sounds[2].Play();
+            }
 		}
 
 		// update the time variable
@@ -132,6 +137,10 @@ public class PlayerController : MonoBehaviour {
 			StartCoroutine (SmoothMovement (box, newBoxPosition));
             //play sound effect
             box.GetComponent<AudioSource>().Play();
+        }
+        else {
+            //play wall sound effect
+            sounds[2].Play();
         }
 	}
 

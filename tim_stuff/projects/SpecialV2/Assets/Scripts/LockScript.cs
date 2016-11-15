@@ -31,6 +31,8 @@ public class LockScript : MonoBehaviour {
 		if (p.checkKey () && p.colorPower.Contains(color)) {
 			unlock = true;
 			d.CheckDoor();
+            //play unlock sound
+            GetComponent<AudioSource>().Play();
 		}
 	}
 
