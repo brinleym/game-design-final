@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	private Animator animator;
 	private float lastTime;
 	private bool haveKey;
+    private AudioSource[] sounds;
 
 	// Use this for initialization
 	void Start () 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		lastTime = Time.time;
 		haveKey = false;
+        sounds = GetComponents<AudioSource>();
 	}
 
 	// Update checks for key strokes from the player
@@ -72,16 +74,21 @@ public class PlayerController : MonoBehaviour {
 		// move only if no collision
 		if (hit.collider == null) {
 
-			// check for key and move
-			playerCollider.enabled = false;
+            //play step sound effect
+            sounds[0].Play();
+
+            // check for key and move
+            playerCollider.enabled = false;
 			hit = Physics2D.Linecast(playerRB2D.position, end, KeyLayer);
 			playerCollider.enabled = true;
 			StartCoroutine(SmoothMovement (playerRB2D, end));
 
 			// pick up key if collided and is of correct color
 			if (hit.collider != null && hit.collider.name.Contains(colorPower)) {
-				hit.collider.gameObject.SetActive (false);
+                hit.collider.gameObject.SetActive (false);
 				haveKey = true;
+                //play key sound effect
+                sounds[1].Play();
 			}
 		} 
 		// otherwise, check for collision with boxes and doors
@@ -123,7 +130,9 @@ public class PlayerController : MonoBehaviour {
 		// move the box if nothing is collider
 		if (boxHit.collider == null) {
 			StartCoroutine (SmoothMovement (box, newBoxPosition));
-		}
+            //play sound effect
+            box.GetComponent<AudioSource>().Play();
+        }
 	}
 
 	// function to see if a player has picked up their key
@@ -137,8 +146,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		float sqrRemainingDistance = (rb.transform.position - end).sqrMagnitude;
 
-		//While that distance is greater than a very small amount (Epsilon, almost zero):
-		while(sqrRemainingDistance > float.Epsilon)
+        //While that distance is greater than a very small amount (Epsilon, almost zero):
+        while (sqrRemainingDistance > float.Epsilon)
 		{
 			//Find a new position proportionally closer to the end, based on the moveTime
 			Vector3 newPosition = Vector3.MoveTowards(rb.position, end, inverseMoveTime * Time.deltaTime);

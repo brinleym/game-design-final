@@ -33,7 +33,10 @@ public class DoorController : MonoBehaviour {
 			red.SetActive (false);
 			green.SetActive (false);
 			blue.SetActive (false);
-		}
+
+            //play sound effect
+            GetComponent<AudioSource>().Play();
+        }
 	}
 
 }
