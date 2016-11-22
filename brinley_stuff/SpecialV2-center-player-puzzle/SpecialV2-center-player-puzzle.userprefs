@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Loader3.cs">
+    <Files>
+      <File FileName="Assets/Scripts/SpecialTileController.cs" Line="37" Column="58" />
+      <File FileName="Assets/Scripts/DoorController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Loader3.cs" Line="44" Column="25" />
+      <File FileName="Assets/Scripts/ExitScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LockScript.cs" Line="17" Column="1" />
+      <File FileName="Assets/Scripts/WalkThroughGate.cs" Line="35" Column="38" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="66" Column="8" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <RunToCursorBreakpoint file="/Users/brinley/Desktop/SpecialV2-center-player-puzzle/Assets/Scripts/SpecialTileController.cs" line="34" column="6" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
