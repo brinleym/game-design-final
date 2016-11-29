@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public KeyCode left, right, up, down, action, restart;
 	public string colorPower;
 	public AudioSource[] sounds;
+    public GameObject collisionbox;
 
 	private Rigidbody2D playerRB2D;
 	private BoxCollider2D playerCollider;
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour {
 	private Animator animator;
 	private float lastTime;
 	private bool haveKey;
+    private GameObject temp;
+    
 
 	// Use this for initialization
 	void Start () 
@@ -72,13 +75,15 @@ public class PlayerController : MonoBehaviour {
 
 		// move only if no collision
 		if (hit.collider == null) {
+            temp = (GameObject)Instantiate(collisionbox, end, Quaternion.identity);
 
-			// check for key and move
-			playerCollider.enabled = false;
+            // temp = (GameObject) Instantiate(collisionbox, end, Quaternion.identity);
+            // check for key and move
+            playerCollider.enabled = false;
 			hit = Physics2D.Linecast(playerRB2D.position, end, KeyLayer);
 			playerCollider.enabled = true;
 			StartCoroutine(SmoothMovement (playerRB2D, end));
-
+            Destroy(temp, moveTime);
 			// pick up key if collided and is of correct color
 			if (hit.collider != null && hit.collider.name.Contains(colorPower)) {
 
