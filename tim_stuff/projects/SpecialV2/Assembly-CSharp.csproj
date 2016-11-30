@@ -45,13 +45,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BlueKeyUI.cs" />
      <Compile Include="Assets\Scripts\DoorController.cs" />
      <Compile Include="Assets\Scripts\ExitScript.cs" />
+     <Compile Include="Assets\Scripts\GreenKeyUI.cs" />
      <Compile Include="Assets\Scripts\Loader.cs" />
      <Compile Include="Assets\Scripts\Loader1.cs" />
      <Compile Include="Assets\Scripts\Loader2.cs" />
+     <Compile Include="Assets\Scripts\Loader3.cs" />
      <Compile Include="Assets\Scripts\LockScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\RedKeyUI.cs" />
+     <Compile Include="Assets\Scripts\SwitchCheckScript.cs" />
+     <Compile Include="Assets\Scripts\SwitchScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

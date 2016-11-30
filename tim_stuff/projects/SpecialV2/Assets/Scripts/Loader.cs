@@ -26,7 +26,7 @@ public class Loader : MonoBehaviour {
 					if (i == 5 && j == 9) {
 					} 
 					else 
-						Instantiate (wall [0], new Vector3 (i, j, 0f), Quaternion.identity);
+						Instantiate(wall[1], new Vector3 (i, j, 0f), Quaternion.identity);
 				}
 				else
 					Instantiate(floor[1], new Vector3(i, j, 0f), Quaternion.identity);

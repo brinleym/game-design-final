@@ -27,6 +27,10 @@ public class LockScript : MonoBehaviour {
 	// if player has key and matches color, then unlock
 	void OnTriggerEnter2D(Collider2D collider)
 	{
+		// ignore if anything other than player has entered lock
+		if (!collider.gameObject.CompareTag ("Player"))
+			return;
+
 		// get the player's script who entered the square
 		PlayerController p = collider.gameObject.GetComponent<PlayerController>();
 		DoorController d = (DoorController) door.GetComponent(typeof(DoorController));

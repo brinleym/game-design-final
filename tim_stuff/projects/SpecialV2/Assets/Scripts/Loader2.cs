@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Loader2 : MonoBehaviour
 {
-
 	public GameObject player1;
 	public GameObject player2;
 	public GameObject player3;
@@ -50,8 +49,6 @@ public class Loader2 : MonoBehaviour
 		Instantiate(wall[0], new Vector3(7, 0, 0f), Quaternion.identity);
 		Instantiate(wall[0], new Vector3(8, 0, 0f), Quaternion.identity);
 		Instantiate(wall[0], new Vector3(9, 0, 0f), Quaternion.identity);
-
-
 
 		//Walls
 		for (int i = 2; i < 15; i++)
@@ -118,8 +115,8 @@ public class Loader2 : MonoBehaviour
 			if (i != 8)
 				Instantiate (wall [0], new Vector3 (i, 12, 0), Quaternion.identity);
 		}
-		Instantiate (wall [0], new Vector3 (2, 10, 0), Quaternion.identity);
-		Instantiate (wall [0], new Vector3 (14, 10, 0), Quaternion.identity);
+		Instantiate(wall[0], new Vector3 (2, 10, 0), Quaternion.identity);
+		Instantiate(wall[0], new Vector3 (14, 10, 0), Quaternion.identity);
 
 		Instantiate(boxes[0], new Vector3(15, 2, 0f), Quaternion.identity);
 		Instantiate(boxes[0], new Vector3(10, 5, 0f), Quaternion.identity);
@@ -135,7 +132,6 @@ public class Loader2 : MonoBehaviour
 		Instantiate(boxes[2], new Vector3(1, 3, 0), Quaternion.identity);
 		Instantiate(boxes[2], new Vector3(6, 7, 0), Quaternion.identity);
 		Instantiate(boxes[2], new Vector3(9, 6, 0), Quaternion.identity);
-
 
 		Instantiate(player1, new Vector3(7, 1, 0f), Quaternion.identity);
 		Instantiate(player2, new Vector3(8, 1, 0f), Quaternion.identity);
