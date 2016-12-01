@@ -21,34 +21,21 @@ public class Loader2 : MonoBehaviour
 		{
 			for (int j = 0; j < rows; j++)
 			{
-				if (i == 0 || i == cols - 1 || j == 0 || j == rows - 1)
+				if (i == 0 || i == cols - 1 || j == rows - 1)
 				{
 					if (i == 8 && j == 13)
 					{
 					}
-					else if (i == 7 && j == 0)
-					{
-					}
-					else if (i == 8 && j == 0)
-					{
-					}
-					else if (i == 9 && j == 0)
-					{
-					}
+
 					else
 						Instantiate(wall[0], new Vector3(i, j), Quaternion.identity);
 				}
 				else
 					Instantiate(floor[1], new Vector3(i, j), Quaternion.identity);
 			}
+			Instantiate(wall[0], new Vector3(i, -1), Quaternion.identity);
 		}
-
-		//Player Starting Squares (No wall to keep them enclosed)
-		Instantiate(wall[0], new Vector3(7, 0), Quaternion.identity);
-		Instantiate(wall[0], new Vector3(8, 0), Quaternion.identity);
-		Instantiate(wall[0], new Vector3(9, 0), Quaternion.identity);
-
-
+			
 
 		//Walls
 		for (int i = 2; i < 15; i++)
