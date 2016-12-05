@@ -38,5 +38,4 @@ public class DoorController : MonoBehaviour {
 			blue.SetActive (false);
 		}
 	}
-
 }

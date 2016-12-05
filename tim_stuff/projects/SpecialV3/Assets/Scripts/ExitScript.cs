@@ -14,7 +14,6 @@ public class ExitScript : MonoBehaviour {
 	// load next level on exiting (this is still buggy!)
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		level += 1;
-		SceneManager.LoadScene(level, LoadSceneMode.Single);
+		SceneManager.LoadScene(level+1, LoadSceneMode.Single);
 	}
 }

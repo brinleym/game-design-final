@@ -1,161 +1,109 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Loader2 : MonoBehaviour
+public class Loader2 : MonoBehaviour 
 {
+	public GameObject player1;
+	public GameObject player2;
+	public GameObject player3;
 
-	public GameObject player1, player2, player3;
 	public GameObject door, exit;
 	public GameObject[] floor;
 	public GameObject[] wall;
 	public GameObject[] boxes;
 	public GameObject[] keys;
 	public GameObject[] locks;
+	public GameObject[] switches;
+	public GameObject keySpawn;
 
 	// Use this for initialization
-	void Start()
-	{
-		int rows = 14;
-		int cols = 17;
-		for (int i = 0; i < cols; i++)
-		{
-			for (int j = 0; j < rows; j++)
-			{
-				if (i == 0 || i == cols - 1 || j == 0 || j == rows - 1)
-				{
-					if (i == 8 && j == 13)
-					{
-					}
-					else if (i == 7 && j == 0)
-					{
-						Instantiate(floor[1], new Vector3(i, j), Quaternion.identity);
+	void Start () {
 
-					}
-					else if (i == 8 && j == 0)
-					{
-						Instantiate(floor[1], new Vector3(i, j), Quaternion.identity);
+		int cols = 13;
+		int rows = 13;
 
-					}
-					else if (i == 9 && j == 0)
-					{
-						Instantiate(floor[1], new Vector3(i, j), Quaternion.identity);
-
-					}
-					else
-						Instantiate(wall[0], new Vector3(i, j), Quaternion.identity);
-				}
-				else
-					Instantiate(floor[1], new Vector3(i, j), Quaternion.identity);
-			}
-		}
-
-		//Player Starting Squares (No wall to keep them enclosed)
-		Instantiate(wall[0], new Vector3(7, -1), Quaternion.identity);
-		Instantiate(wall[0], new Vector3(8, -1), Quaternion.identity);
-		Instantiate(wall[0], new Vector3(9, -1), Quaternion.identity);
-		Instantiate(wall[0], new Vector3(6, -1), Quaternion.identity);
-		Instantiate(wall[0], new Vector3(10, -1), Quaternion.identity);
-
-
-
-
-		//Walls
-		for (int i = 2; i < 15; i++)
-		{
-			if (i == 2)
-			{
-				for (int j = 3; j < 10; j++)
-				{
-					if (j != 7)
-					{
-						Instantiate(wall[0], new Vector3(i, j), Quaternion.identity);
-					}
-				}
-			}
-			else if (i == 14)
-			{
-				for (int j = 3; j < 10; j++)
-				{
-					if (j != 5)
-					{
-						Instantiate(wall[0], new Vector3(i, j), Quaternion.identity);
-					}
-				}
-			}
-			else
-			{
-				Instantiate(wall[0], new Vector3(i, 2), Quaternion.identity);
-				Instantiate(wall[0], new Vector3(i, 10), Quaternion.identity);
-			}
-
-		}
-		for (int j = 4; j < 9; j++)
-		{
-			if (j == 4)
-			{
-				for (int i = 4; i < 13; i++)
-				{
-					if (i != 10)
-					{
-						Instantiate(wall[0], new Vector3(i, j), Quaternion.identity);
-					}
-				}
-			}
-			else if (j == 8)
-			{
-				for (int i = 4; i < 13; i++)
-				{
-					if (i != 6)
-					{
-						Instantiate(wall[0], new Vector3(i, j), Quaternion.identity);
-					}
-				}
-			}
-			else
-			{
-				Instantiate(wall[0], new Vector3(4, j), Quaternion.identity);
-				Instantiate(wall[0], new Vector3(12, j), Quaternion.identity);
-			}
-
-		}
-
-		// extra walls
+		// set up main room space
 		for (int i = 0; i < cols; i++) {
-			if (i != 8)
-				Instantiate (wall [0], new Vector3 (i, 12), Quaternion.identity);
+			for (int j = 0; j < rows; j++) {
+
+				// do nothing to leave room for door
+				if (i == 6 && j == 12){
+				}
+				// outer walls with square floor
+				else if (i == 0 || i == cols - 1 || j == 0 || j == rows - 1) {
+					Instantiate(wall[0], new Vector3(i, j), Quaternion.identity);
+				} 
+				else {
+					Instantiate(floor[0], new Vector3(i, j), Quaternion.identity);
+				}
+			}
 		}
-		Instantiate (wall [0], new Vector3 (2, 10), Quaternion.identity);
-		Instantiate (wall [0], new Vector3 (14, 10), Quaternion.identity);
 
-		Instantiate(boxes[0], new Vector3(15, 2), Quaternion.identity);
-		Instantiate(boxes[0], new Vector3(10, 5), Quaternion.identity);
-		Instantiate(boxes[0], new Vector3(7, 6), Quaternion.identity);
+		// set up players
+		Instantiate(player1, new Vector3(4, 1), Quaternion.identity);
+		Instantiate(player2, new Vector3(6, 1), Quaternion.identity);
+		Instantiate(player3, new Vector3(8, 1), Quaternion.identity);
 
-		Instantiate(boxes[1], new Vector3(13, 4), Quaternion.identity);
-		Instantiate(boxes[1], new Vector3(3, 4), Quaternion.identity);
-		Instantiate(boxes[1], new Vector3(4, 9), Quaternion.identity);
-		Instantiate(boxes[1], new Vector3(12, 9), Quaternion.identity);
-		Instantiate(boxes[1], new Vector3(8, 5), Quaternion.identity);
-		Instantiate(boxes[1], new Vector3(8, 7), Quaternion.identity);
+		// set up keys
+		Instantiate(keys[0], new Vector3(1, 11), Quaternion.identity);
+		Instantiate(keys[1], new Vector3(6, 11), Quaternion.identity);
+		Instantiate(keys[2], new Vector3(11, 11), Quaternion.identity);
 
-		Instantiate(boxes[2], new Vector3(1, 3), Quaternion.identity);
-		Instantiate(boxes[2], new Vector3(6, 7), Quaternion.identity);
-		Instantiate(boxes[2], new Vector3(9, 6), Quaternion.identity);
+		// set up locks
+		Instantiate(locks[0], new Vector3(5, 11), Quaternion.identity);
+		Instantiate(locks[1], new Vector3(6, 10), Quaternion.identity);
+		Instantiate(locks[2], new Vector3(7, 11), Quaternion.identity);
 
+		// set up door and exit
+		Instantiate(door, new Vector3(6, 12.5f), Quaternion.identity);
+		Instantiate(exit, new Vector3(6, 13), Quaternion.identity);
 
-		Instantiate(player1, new Vector3(7, 0), Quaternion.identity);
-		Instantiate(player2, new Vector3(8, 0), Quaternion.identity);
-		Instantiate(player3, new Vector3(9, 0), Quaternion.identity);
+		// keyspawn as switch controller
+		GameObject kspawn = Instantiate(keySpawn);
 
-		Instantiate(door, new Vector3(8, 12.5f), Quaternion.identity);
-		//Instantiate(exit, new Vector3(8, 13), Quaternion.identity);
+		// set up each set of colored switch, all assigned to keyspawn
+		GameObject rswitch;
+		for (int i = 4; i <= 8; i++) {
+			rswitch = (GameObject) Instantiate(switches[0], new Vector3(i, 3), Quaternion.identity);
+			rswitch.GetComponent<SwitchScript>().SetTrigger(kspawn);
+		}
 
-		Instantiate(locks[0], new Vector3(6, 11), Quaternion.identity);
-		Instantiate(locks[1], new Vector3(8, 11), Quaternion.identity);
-		Instantiate(locks[2], new Vector3(10, 11), Quaternion.identity);
+		GameObject gswitch = (GameObject) Instantiate(switches[1], new Vector3(3, 4), Quaternion.identity);
+		gswitch.GetComponent<SwitchScript>().SetTrigger(kspawn);
+		for (int i = 4; i <= 5; i++) {
+			for (int j = 7; j <= 8; j++) {
+				gswitch = (GameObject) Instantiate(switches[1], new Vector3(i, j), Quaternion.identity);
+				gswitch.GetComponent<SwitchScript>().SetTrigger(kspawn);
+			} 
+		}
 
-		Instantiate(keys[0], new Vector3(8, 6), Quaternion.identity);
-		Instantiate(keys[1], new Vector3(9, 5), Quaternion.identity);
-		Instantiate(keys[2], new Vector3(7, 7), Quaternion.identity);
+		GameObject bswitch = (GameObject) Instantiate(switches[2], new Vector3(9, 4), Quaternion.identity);
+		bswitch.GetComponent<SwitchScript>().SetTrigger(kspawn);
+		for (int i = 7; i <= 8; i++) {
+			for (int j = 7; j <= 8; j++) {
+				bswitch = (GameObject) Instantiate(switches[2], new Vector3(i, j), Quaternion.identity);
+				bswitch.GetComponent<SwitchScript>().SetTrigger(kspawn);
+			} 
+		}
+			
+		// set up boxes
+		Instantiate(boxes[0], new Vector3(2, 10), Quaternion.identity);
+		Instantiate(boxes[0], new Vector3(10, 8), Quaternion.identity);
+		Instantiate(boxes[0], new Vector3(6, 5), Quaternion.identity);
+		Instantiate(boxes[0], new Vector3(2, 2), Quaternion.identity);
+		Instantiate(boxes[0], new Vector3(10, 4), Quaternion.identity);
+
+		Instantiate(boxes[1], new Vector3(2, 3), Quaternion.identity);
+		Instantiate(boxes[1], new Vector3(2, 9), Quaternion.identity);
+		Instantiate(boxes[1], new Vector3(5, 5), Quaternion.identity);
+		Instantiate(boxes[1], new Vector3(10, 10), Quaternion.identity);
+		Instantiate(boxes[1], new Vector3(10, 2), Quaternion.identity);
+
+		Instantiate(boxes[2], new Vector3(2, 4), Quaternion.identity);
+		Instantiate(boxes[2], new Vector3(2, 8), Quaternion.identity);
+		Instantiate(boxes[2], new Vector3(7, 5), Quaternion.identity);
+		Instantiate(boxes[2], new Vector3(10, 3), Quaternion.identity);
+		Instantiate(boxes[2], new Vector3(10, 9), Quaternion.identity);
 	}
+
 }

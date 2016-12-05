@@ -102,10 +102,11 @@ public class PlayerController : MonoBehaviour {
 		// otherwise, check for collision with boxes and doors
 		else { 
 			if (hit.collider.gameObject.tag == "Box") {
-				// get the box collided with and send to movement
-				Rigidbody2D box = hit.collider.gameObject.GetComponent<Rigidbody2D> ();
-				if (box.name.Contains (colorPower))
-					AttemptPush (box, end);
+
+				// get the box collided with and send to AttemptPush if matching color
+				Rigidbody2D box = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+				if (box.name.Contains(colorPower))
+					AttemptPush(box, end);
 			} 
 		}
 
