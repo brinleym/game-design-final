@@ -17,6 +17,7 @@ public class KeySpawnScript : MonoBehaviour {
 
 		// get list of all switches
 		switchList = GameObject.FindGameObjectsWithTag("Switch");
+
 	}
 	
 	// internal function to enable keys when conditions are met
@@ -47,6 +48,7 @@ public class KeySpawnScript : MonoBehaviour {
 	// external function to check all switches
 	public void CheckAllSwitches()
 	{
+
 		// for each switch, get their script and check their status
 		foreach (GameObject obj in switchList) {
 			SwitchScript ss = obj.GetComponent<SwitchScript>();

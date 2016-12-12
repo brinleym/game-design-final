@@ -22,7 +22,6 @@ public class AllOpenGate : MonoBehaviour {
 
 			// check if switch is in first room
 			if(obj.transform.position.y < 0) {
-				Debug.Log("swtich is in first room!");
 				mySwitches.Add(obj);
 
 			}
@@ -38,6 +37,7 @@ public class AllOpenGate : MonoBehaviour {
 	// external function to check all switches
 	public void CheckAllSwitches()
 	{
+
 		// for each switch, get their script and check their status
 		foreach (GameObject obj in mySwitches) {
 			SwitchScript ss = obj.GetComponent<SwitchScript>();
