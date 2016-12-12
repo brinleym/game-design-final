@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Loader7.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Loader2.cs" Line="89" Column="38" />
+      <File FileName="Assets/Scripts/Loader3.cs" Line="48" Column="1" />
+      <File FileName="Assets/Scripts/Loader7.cs" Line="84" Column="68" />
+      <File FileName="Assets/Scripts/SwitchScript.cs" Line="63" Column="5" />
+      <File FileName="Assets/Scripts/KeySpawnScript.cs" Line="19" Column="60" />
+      <File FileName="Assets/Scripts/GateScript.cs" Line="15" Column="3" />
+      <File FileName="Assets/Scripts/AllOpenGate.cs" Line="10" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
