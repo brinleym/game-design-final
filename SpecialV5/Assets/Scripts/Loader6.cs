@@ -112,8 +112,8 @@ public class Loader6 : MonoBehaviour {
 
 		// set up locks
 		Instantiate(locks[0], new Vector3(14, 18), Quaternion.identity);
-		Instantiate(locks[1], new Vector3(9, 18), Quaternion.identity);
-		Instantiate(locks[2], new Vector3(19, 18), Quaternion.identity);
+		Instantiate(locks[1], new Vector3(13, 19), Quaternion.identity);
+		Instantiate(locks[2], new Vector3(15, 19), Quaternion.identity);
 
 		// set up door and exit
 		Instantiate(door, new Vector3(14, 20.5f), Quaternion.identity);
