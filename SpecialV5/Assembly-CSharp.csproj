@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AllOpenGate.cs" />
      <Compile Include="Assets\Scripts\DoorController.cs" />
+     <Compile Include="Assets\Scripts\EndingScript.cs" />
      <Compile Include="Assets\Scripts\ExitScript.cs" />
      <Compile Include="Assets\Scripts\GateScript.cs" />
      <Compile Include="Assets\Scripts\KeySpawnScript.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\Loader7.cs" />
      <Compile Include="Assets\Scripts\LockScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\ScreenScript.cs" />
      <Compile Include="Assets\Scripts\SwitchScript.cs" />
      <Compile Include="Assets\Scripts\UIScript.cs" />
  <Reference Include="UnityEngine.UI">
