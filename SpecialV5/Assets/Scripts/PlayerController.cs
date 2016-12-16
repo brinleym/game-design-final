@@ -95,8 +95,8 @@ public class PlayerController : MonoBehaviour {
 				haveKey = true;
 
 				// notify UI that key has been picked up
-				UIScript ui = GameObject.Find("Canvas/" + colorPower).GetComponent<UIScript>();
-				ui.ObtainKey();
+				//UIScript ui = GameObject.Find("Canvas/" + colorPower).GetComponent<UIScript>();
+				//ui.ObtainKey();
 			}
 		} 
 		// otherwise, check for collision with boxes and doors

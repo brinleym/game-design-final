@@ -33,7 +33,12 @@ public class Loader6 : MonoBehaviour {
 				// outer walls with square floor
 				else if (i == 0 || i == cols - 1 || j == 0 || j == rows - 1)
 				{
-					Instantiate(wall[0], new Vector3(i, j), Quaternion.identity);
+					if ((j == 0 && i > 3 && i < 8) || (j == 0 && i > 22 && i < 27)) {
+						Instantiate(floor[0], new Vector3(i, j), Quaternion.identity);
+						Instantiate(wall[0], new Vector2(i, j - 1), Quaternion.identity);
+					}
+					else 
+						Instantiate(wall[0], new Vector3(i, j), Quaternion.identity);
 				}
 				else
 				{
@@ -41,6 +46,13 @@ public class Loader6 : MonoBehaviour {
 				}
 			}
 		}
+
+		// fill in extra gaps
+		Instantiate(wall[0], new Vector2(3, -1), Quaternion.identity);
+		Instantiate(wall[0], new Vector2(8, -1), Quaternion.identity);
+		Instantiate(wall[0], new Vector2(22, -1), Quaternion.identity);
+		Instantiate(wall[0], new Vector2(27, -1), Quaternion.identity);
+
 
 		for (int i = 0; i < cols; i++)
 		{

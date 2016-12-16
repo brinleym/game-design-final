@@ -144,7 +144,7 @@ public class Loader4 : MonoBehaviour
 		Instantiate(player3, new Vector3(9, 0), Quaternion.identity);
 
 		Instantiate(door, new Vector3(8, 12.5f), Quaternion.identity);
-		//Instantiate(exit, new Vector3(8, 13), Quaternion.identity);
+		Instantiate(exit, new Vector3(8, 13), Quaternion.identity);
 
 		Instantiate(locks[0], new Vector3(6, 11), Quaternion.identity);
 		Instantiate(locks[1], new Vector3(8, 11), Quaternion.identity);
